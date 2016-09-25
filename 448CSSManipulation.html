@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <title>Manweiler EECS 448 Page</title>
+    <meta content="">
+    <style></style>
+    <script>
+	function updatePage() {
+		var bodytag = document.getElementById("body");
+		var paragraphtag = document.getElementById("paragraph");
+		var bordercolortag = document.getElementById("bordercolorvalue");
+		var borderwidthtag = document.getElementById("borderwidthvalue");
+		var backgroundcolortag = document.getElementById("backgroundcolorvalue");
+		
+		var newbordercolor = getColorCode(bordercolortag.value);
+		var newbackgroundcolor = getColorCode(backgroundcolortag.value);
+
+		if(newbackgroundcolor == "") alert("Invalid background color");
+		else if(newbordercolor == "") alert("Invalid border color");
+		else if(borderwidthtag.value < 0) alert("Invalid border width");
+		else{
+			paragraphtag.style.borderColor = newbordercolor;
+			var length = borderwidthtag.value + "px";
+			paragraphtag.style.borderWidth = length;
+			bodytag.style.backgroundColor = newbackgroundcolor;
+		}
+	}
+	function getColorCode(name){
+		switch(name){
+			case "Aqua":
+				return "#00FFFF";
+				break;
+			case "Aquamarine":
+				return "#7FFFD4";
+				break;
+			case "Blue":
+				return "#0000FF";
+				break;
+			case "BurlyWood":
+				return "#DEB887";
+				break;
+			case "Crimson":
+				return "#DC143C";
+				break;
+			case "DarkGreen":
+				return "#006400";
+				break;
+			case "DarkOrange":
+				return "#FF8C00";
+				break;
+			case "DarkRed":
+				return "#8B0000";
+				break;
+			case "FloralWhite":
+				return "#FFFAF0";
+				break;
+			case "Fuchsia":
+				return "#FF00FF";
+				break;
+			case "Gold":
+				return "#FFD700";
+				break;
+			case "RebeccaPurple":
+				return "#663399";
+				break;
+			case "Red":
+				return "#FF0000";
+				break;
+			case "Sienna":
+				return "#A0522D";
+				break;
+			case "Yellow":
+				return "#FFFF00";
+				break;
+			default:
+				return "";
+				break;
+		}
+	}
+    </script>
+  </head>
+  <body id="body" style="background-color: #FFFAF0;">
+    <p id="paragraph" style="border: 10px solid red;">Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. 
+		<br /><br /> Values for the border or background color: <br />Aqua(#00FFFF) <br /> Aquamarine(#7FFFD4) <br /> Blue(#0000FF) <br /> BurlyWood(#DEB887) <br /> Crimson(DC143C) <br /> DarkGreen(#006400) <br /> DarkOrange(#FF8C00)<br /> DarkRed(#8B0000)<br /> FloralWhite(#FFFAF0)<br /> Fuchsia(#FF00FF)<br /> Green(#008000)<br /> Gold(#FFD700)<br /> RebeccaPurple(#663399)<br /> Red(#FF0000)<br /> Sienna(#A0522D)<br /> Yellow(#FFFF00)"</p>
+    <br />
+      <div id="bordercolordiv" class="formdiv">
+	 <label for="txt-bordercolor">Border Color Value:</label>
+	 <input id="bordercolorvalue" name="txt_bordercolor" type="text" value="Red"/>
+      </div>
+      <br />
+      <div id="borderwidthdiv" class="formdiv">
+	 <label for="txt-borderwidth">Border Width Value:</label>
+	 <input id="borderwidthvalue" name="txt-borderwidth" type="number" value="10"/>
+      </div>
+      <br />
+      <div id="backgroundcolordiv" class="formdiv">
+	 <label for="txt-backgroundcolor">Background Color Value:</label>
+	 <input id="backgroundcolorvalue" name="txt-backgroundcolor" type="text" value="FloralWhite"/>
+      </div>
+      <br />
+      <div id="updatebutton">
+	 <button onclick="updatePage()">Update Page</button>
+      </div>
+  </body>
+</html>
+

@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Manweiler EECS 448 Page</title>
+    <meta content="">
+    <style></style>
+    <script>
+        var images = ["chicken.jpg", "burger.jpg", "eggroll.jpg", "pancakes.jpg", "pizza.jpg"];
+        var curimage = 0;
+        function prev(){
+            if(curimage == 0){
+                document.getElementById("image").src = images[4];
+                curimage = 4;
+            }
+            else{
+                document.getElementById("image").src = images[curimage-1];
+                curimage--;
+            }
+        }
+        function next(){
+            if(curimage == 4){
+                document.getElementById("image").src = images[0];
+                curimage = 0;
+            }
+            else{
+                document.getElementById("image").src = images[curimage+1];
+                curimage++;
+            }
+        }
+    </script>
+  </head>
+  <body>
+    <p>Food Slide Show</p>
+    <img src="chicken.jpg" id="image" width="500" height="500">
+    <br>
+    <button onclick="prev()">Previous</button>
+    <button onclick="next()">Next</button>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+body
+{
+        background-color: #FF9999;
+        background-image: url(Stars.jpg);
+        background-size: 75%;
+}
+h2
+{
+        color: white;
+        font-family: arial;
+        font-size: 20pt;
+}
+h6
+{
+        color: white;
+}
+p
+{
+        background-color: #ff9999;
+        color: black;
+        font-family: arial;
+        font-size: 12pt;
+}
+img.profile:hover
+{
+    border:1px solid red;
+}
